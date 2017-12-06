@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-# Create your models here.
+# 基本面
 class Company(models.Model):
     full_name = models.CharField(u'公司全称', max_length=50)
     address = models.CharField(u'地址', max_length=200)
@@ -88,3 +88,44 @@ class OperationData(models.Model):
 
     def __unicode__(self):
         return '%s %s %s' % (self.code, self.name, self.esp)
+
+# 成长能力
+class GrowthData(models.Model):
+    code = models.CharField(u'代码', max_length=50)
+    name = models.CharField(u'名称', max_length=50)
+    mbrg = models.FloatField(u'主营业务收入增长率( %)' )
+    nprg = models.FloatField(u'净利润增长率( %)' )
+    nav = models.FloatField(u'净资产增长率' )
+    targ = models.FloatField(u'总资产增长率' )
+    epsg = models.FloatField(u'每股收益增长率' )
+    seg = models.FloatField(u'股东权益增长率' )
+
+    def __unicode__(self):
+        return '%s %s %s' % (self.code, self.name, self.mbrg)
+
+# 偿债能力
+class DebtpayingData(models.Model):
+    code = models.CharField(u'代码', max_length=50)
+    name = models.CharField(u'名称', max_length=50)
+    currentratio = models.FloatField(u'流动比率' )
+    quickratio = models.FloatField(u'速动比率' )
+    cashratio = models.FloatField(u'现金比率' )
+    icratio = models.FloatField(u'利息支付倍数' )
+    sheqratio = models.FloatField(u'股东权益比率' )
+    adratio = models.FloatField(u'股东权益增长率' )
+
+    def __unicode__(self):
+        return '%s %s %s' % (self.code, self.name, self.mbrg)
+
+# 现金流量
+class DebtpayingData(models.Model):
+    code = models.CharField(u'代码', max_length=50)
+    name = models.CharField(u'名称', max_length=50)
+    cf_sales = models.FloatField(u'经营现金净流量对销售收入比率' )
+    rateofreturn = models.FloatField(u'资产的经营现金流量回报率' )
+    cf_nm = models.FloatField(u'经营现金净流量与净利润的比率' )
+    cf_liabilities = models.FloatField(u'经营现金净流量对负债比率' )
+    cashflowratio = models.FloatField(u'现金流量比率' )
+
+    def __unicode__(self):
+        return '%s %s %s' % (self.code, self.name, self.mbrg)
