@@ -41,7 +41,7 @@ class StockBasics(models.Model):
     holders = models.FloatField(u'股东人数' )
 
     def __unicode__(self):
-        return '%s %s %s' % (self.code, self.name, self.industry)
+        return '%s %s' % (self.code, self.name)
 
 # 业绩报告
 class ReportData(models.Model):
@@ -58,7 +58,7 @@ class ReportData(models.Model):
     report_date = models.CharField(u'发布日期', max_length=20)
 
     def __unicode__(self):
-        return '%s %s %s' % (self.code, self.name, self.esp)
+        return '%s %s' % (self.code, self.name)
 
 # 盈利能力
 class ProfitData(models.Model):
@@ -73,7 +73,7 @@ class ProfitData(models.Model):
     bips = models.FloatField(u'每股主营业务收入(元)' )
 
     def __unicode__(self):
-        return '%s %s %s' % (self.code, self.name, self.esp)
+        return '%s %s' % (self.code, self.name)
 
 # 营运能力
 class OperationData(models.Model):
@@ -87,7 +87,7 @@ class OperationData(models.Model):
     currentasset_days = models.FloatField(u'流动资产周转天数(天)' )
 
     def __unicode__(self):
-        return '%s %s %s' % (self.code, self.name, self.esp)
+        return '%s %s' % (self.code, self.name)
 
 # 成长能力
 class GrowthData(models.Model):
@@ -101,7 +101,7 @@ class GrowthData(models.Model):
     seg = models.FloatField(u'股东权益增长率' )
 
     def __unicode__(self):
-        return '%s %s %s' % (self.code, self.name, self.mbrg)
+        return '%s %s' % (self.code, self.name)
 
 # 偿债能力
 class DebtpayingData(models.Model):
@@ -115,7 +115,8 @@ class DebtpayingData(models.Model):
     adratio = models.FloatField(u'股东权益增长率' )
 
     def __unicode__(self):
-        return '%s %s %s' % (self.code, self.name, self.mbrg)
+        return '%s %s' % (self.code, self.name)
+
 
 # 现金流量
 class DebtpayingData(models.Model):
@@ -128,4 +129,4 @@ class DebtpayingData(models.Model):
     cashflowratio = models.FloatField(u'现金流量比率' )
 
     def __unicode__(self):
-        return '%s %s %s' % (self.code, self.name, self.mbrg)
+        return '%s %s' % (self.code, self.name)

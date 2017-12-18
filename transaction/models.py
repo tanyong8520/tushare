@@ -25,7 +25,7 @@ class HistData(models.Model):
     turnover = models.FloatField(u'换手率')
 
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s %s' % (self.date, self.code)
 
 # 复权历史数据
 class HistData(models.Model):
@@ -40,7 +40,7 @@ class HistData(models.Model):
     amount = models.FloatField(u'成交金额')
 
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s %s' % (self.date, self.code)
 
 # 事实行情数据
 class TodayAll(models.Model):
@@ -62,7 +62,7 @@ class TodayAll(models.Model):
     nmc = models.FloatField(u'流通市值')
 
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s %s' % (self.date, self.code)
 
 # 历史分笔数据
 class TodayTicks(models.Model):
@@ -75,7 +75,7 @@ class TodayTicks(models.Model):
     type = models.CharField(u'买卖类型', max_length=50)
 
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s %s' % (self.date, self.code)
 
 # 大盘指数列表
 class AllIndex(models.Model):
@@ -91,7 +91,7 @@ class AllIndex(models.Model):
     amount = models.FloatField(u'成交金额（亿元）' )
 
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s %s' % (self.date, self.code)
 
 # 大单交易数据
 class AllIndex(models.Model):
@@ -104,4 +104,4 @@ class AllIndex(models.Model):
     type = models.CharField(u'买卖类型', max_length=50)
 
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s %s' % (self.date, self.code)

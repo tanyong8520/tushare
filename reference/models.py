@@ -15,7 +15,7 @@ class ProfitData(models.Model):
     shares = models.FloatField(u'转增和送股数（每10股）' )
 
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s %s' % (self.date, self.code)
 
 # 业绩预告
 class ForecastData(models.Model):
@@ -27,7 +27,7 @@ class ForecastData(models.Model):
     pre_eps = models.FloatField(u'上年同期每股收益')
     range = models.FloatField(u'业绩变动范围' )
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s %s' % (self.date, self.code)
 
 
 # 限售股解禁
@@ -39,7 +39,7 @@ class XsgData(models.Model):
     count = models.FloatField(u'解禁数量（万股）')
     ratio = models.FloatField(u'占总盘比率' )
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s %s' % (self.date, self.code)
 
 
 # 基金持股
@@ -55,7 +55,7 @@ class FundDoldings(models.Model):
     amount = models.FloatField(u'基金持股市值')
     ratio = models.FloatField(u'占流通盘比率')
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s %s' % (self.date, self.code)
 
 
 # 新股数据
@@ -73,7 +73,7 @@ class NewStocks(models.Model):
     funds = models.FloatField(u'募集资金(亿元)')
     ballot = models.FloatField(u'网上中签率(%)')
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s %s' % (self.date, self.code)
 
 # 融资融券（沪市）
 class ShMargins(models.Model):
@@ -85,7 +85,7 @@ class ShMargins(models.Model):
     rqmcl = models.FloatField(u'本日融券卖出量')
     rzrqjyzl = models.FloatField(u'本日融资融券余额(元)')
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s' % (self.date)
 
 
 # 融资融券明细数据
@@ -101,7 +101,7 @@ class ShMarginDetails(models.Model):
     rqmcl = models.FloatField(u'本日融券卖出量')
     rqchl = models.FloatField(u'本日融券偿还量')
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s' % (self.date)
 
 # 深市融资融券汇总数据
 class SzMargins(models.Model):
@@ -114,7 +114,7 @@ class SzMargins(models.Model):
     rqye = models.FloatField(u' 融券余量(元)')
     rzrqye = models.FloatField(u'融资融券余额(元)')
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s' % (self.date)
 
 
 # 融资融券明细数据
@@ -130,4 +130,4 @@ class ShMarginDetails(models.Model):
     rqye = models.FloatField(u'融券余量(元)')
     rzrqye = models.FloatField(u'融资融券余额(元)')
     def __unicode__(self):
-        return '%s %s %s' % (self.date, self.code)
+        return '%s' % (self.date)

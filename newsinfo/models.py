@@ -15,7 +15,7 @@ class LatestNews(models.Model):
     url = models.CharField(u'新闻链接', max_length=50)
     content = models.CharField(u'新闻内容', max_length=5000)
     def __unicode__(self):
-        return '%s %s %s' % (self.name, self.code)
+        return '%s %s %s' % (self.time, self.classify, self.title)
 
 
 # 信息地雷
@@ -25,7 +25,7 @@ class Notices(models.Model):
     time = models.DateField(u'公告日期')
     url = models.CharField(u'信息内容URL', max_length=50)
     def __unicode__(self):
-        return '%s %s %s' % (self.name, self.code)
+        return '%s %s %s' % (self.name, self.type, self.code)
 
 
 # 信息地雷
@@ -35,4 +35,4 @@ class GubaSina(models.Model):
     ptime = models.DateField(u'发布时间')
     rcounts = models.FloatField(u'阅读次数')
     def __unicode__(self):
-        return '%s %s %s' % (self.name, self.code)
+        return '%s %s' % (self.ptime, self.title)
