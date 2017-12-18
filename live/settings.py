@@ -38,6 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
+    'callloans.apps.CallloansConfig',
+    'classified.apps.ClassifiedConfig',
+    'macroeconomic.apps.MacroeconomicConfig',
+    'newsinfo.apps.NewsinfoConfig',
+    'reference.apps.ReferenceConfig',
+    'transaction.apps.TransactionConfig',
 ]
 
 MIDDLEWARE = [
