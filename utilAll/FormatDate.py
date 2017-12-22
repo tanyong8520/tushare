@@ -1,5 +1,11 @@
+# -*- coding: utf-8 -*-
 import datetime
+import pandas as pd
 
+def getNowdate():
+    myday = datetime.datetime.now()
+    dt = myday.strftime('%Y-%m-%d')
+    return dt
 
 def getYearQuarter(year,quarter):
     if year is None:
@@ -15,3 +21,37 @@ def getYearQuarter(year,quarter):
         else:
             quarter = 4
     return [year,quarter]
+
+def getYearMonth(year,month):
+    if year is None:
+        year = datetime.datetime.now().year
+    if month is None:
+        month = datetime.datetime.now().month
+    return [year,month]
+
+def getStartTime(endTime =None,number = 1):
+    if endTime is None:
+        endTime = datetime.datetime.now()
+        myday = endTime + datetime.timedelta(days=-number)
+        endTime = endTime.strftime('%Y-%m-%d')
+    else:
+        myday =datetime.datetime.strptime(endTime, '%Y-%m-%d') + datetime.timedelta(days=-number)
+    startTime = myday.strftime('%Y-%m-%d')
+    return [startTime,endTime]
+
+def getdatelist(beginTime, endTime):
+    if endTime is None:
+        endDate = datetime.datetime.now()
+    else:
+        endDate = datetime.datetime.strptime(endTime, '%Y-%m-%d')
+
+    if beginTime is None:
+        beginDate = endDate
+    else:
+        beginDate = datetime.datetime.strptime(beginTime, '%Y-%m-%d')
+
+    date_l=[x.strftime('%Y-%m-%d') for x in list(pd.date_range(start=beginDate, end=endDate))]
+    return date_l
+
+if __name__ == '__main__':
+    print getdatelist(None,None)

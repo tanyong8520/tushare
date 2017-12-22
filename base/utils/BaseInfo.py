@@ -1,9 +1,9 @@
+# -*- coding: utf-8 -*-
 import tushare as ts
 from sqlalchemy import create_engine
 from utilAll.Constants import *
 from utilAll.FormatDate import *
 import pandas as pd
-import datetime
 
 
 class BaseInfo:

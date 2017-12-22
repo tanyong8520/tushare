@@ -1,12 +1,12 @@
-# # -*- coding: utf-8 -*-
-# from __future__ import unicode_literals
-#
-# from django.db import models
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.db import models
 #
 #
 # # 基本面
 #
-# # 股票列表
+# 股票列表
 # class StockBasics(models.Model):
 #     code = models.CharField(u'代码', max_length=50)
 #     name = models.CharField(u'名称', max_length=50)

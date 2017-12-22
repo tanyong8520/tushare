@@ -17,3 +17,19 @@ BASE_GROWTH_DATA = 'base_growthdata'
 BASE_DEBTPAYINT_DATA = 'base_debtpayingdata'
 # 现金流量
 BASE_CASHFLOW_DATA = 'base_cashflowdata'
+
+# 参考数据
+# 分配预案
+REFERENCE_PROFIT_DATA = 'reference_profitdata'
+# 业绩预告
+REFERENCE_FORECAST_DATA = 'reference_forecastdata'
+# 限售股解禁
+REFERENCE_XSG_DATA = 'reference_xsgdata'
+# 基金持股
+REFERENCE_HUND_HOLDINGS = 'reference_fundholdings'
+# 新股数据
+REFERENCE_NEW_STOCKS= 'reference_newstocks'
+# 融资融券（沪市）
+REFERENCE_SH_MARGINS= 'reference_shmargins'
+# 融资融券明细数据（沪市）
+REFERENCE_SH_MARGINS_DETAILS= 'reference_shmargindetails'

@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 import base.utils.BaseInfo as BaseInfo
-from base.models import *
+from utilAll import *
 
 # Create your views here.
 from django.http import HttpResponse
@@ -15,4 +15,4 @@ def getAllBaseInfo(request):
     stockList = baseInfo.getStockList()
     for i in stockList:
         print i
-        StockBasics.objects.create()
+
