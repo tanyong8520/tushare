@@ -57,3 +57,30 @@ CLASSIFIED_ZZ500S = 'classified_zz500s'
 CLASSIFIED_TERMINATED = 'classified_terminated'
 # 暂停上市股票列表
 CLASSIFIED_SUSPENDED = 'classified_suspended'
+
+# 宏观经济
+# 存款利率
+MACROECONOMIC_DEPOSIT_RATE = 'macroeconomic_deposit_rate'\
+# 贷款利率
+MACROECONOMIC_LOAN_RATE = 'macroeconomic_loan_rate'
+# 存款准备金率
+MACROECONOMIC_RRR = 'macroeconomic_rrr'
+# 货币供应量
+MACROECONOMIC_MONEY_SUPPLY = 'macroeconomic_money_supply'
+# 货币供应量(年底余额)
+MACROECONOMIC_MONEY_SUPPLY_BAL = 'macroeconomic_money_supply_bal'
+# 国内生产总值(年度)
+MACROECONOMIC_GDP_YEAR = 'macroeconomic_gdp_year'
+# 国内生产总值(季度)
+MACROECONOMIC_GDP_QUARTER = 'macroeconomic_gdp_quarter'
+# 三大需求对GDP贡献
+MACROECONOMIC_GDP_FOR = 'macroeconomic_gdp_for'
+# 三大产业对GDP拉动
+MACROECONOMIC_GDP_PULL = 'macroeconomic_gdp_pull'
+# 三大产业贡献率
+MACROECONOMIC_GDP_CONTRIB = 'macroeconomic_gdp_contrib'
+# 居民消费价格指数
+MACROECONOMIC_CPI = 'macroeconomic_cpi'
+# 工业品出厂价格指数
+MACROECONOMIC_PPI = 'macroeconomic_ppi'
+
