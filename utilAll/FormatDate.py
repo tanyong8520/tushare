@@ -53,5 +53,11 @@ def getdatelist(beginTime, endTime):
     date_l=[x.strftime('%Y-%m-%d') for x in list(pd.date_range(start=beginDate, end=endDate))]
     return date_l
 
+def getYearList(endYear = None,number = 1):
+    if endYear is None:
+        endYear = datetime.datetime.now().year
+    dete_l = [endYear - x for x in range(number)]
+    return dete_l
+
 if __name__ == '__main__':
-    print getdatelist(None,None)
+    print getYearList(number = 10)

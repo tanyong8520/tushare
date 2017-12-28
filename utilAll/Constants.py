@@ -84,3 +84,15 @@ MACROECONOMIC_CPI = 'macroeconomic_cpi'
 # 工业品出厂价格指数
 MACROECONOMIC_PPI = 'macroeconomic_ppi'
 
+# 银行间同业拆放利率
+# Shibor拆放利率
+CALLLOANS_SHIBOR_DATA = 'callloansInfo_shibor_data'
+# 银行报价数据
+CALLLOANS_SHIBOR_QUOTE_DATA = 'callloansInfo_shibor_quote_data'
+# Shibor均值数据
+CALLLOANS_MA_DATA = 'callloansInfo_shibor_ma_data'
+# 贷款基础利率
+CALLLOANS_LPR_DATA = 'callloansInfo_lpr_data'
+# 贷款基础利率均值
+CALLLOANS_LPR_MA_DATA = 'callloansInfo_lpr_ma_data'
+
