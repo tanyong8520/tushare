@@ -22,7 +22,7 @@ class BaseInfo:
         return df
 
     def getStockBasics(self,tableName = BASE_STOCK_BASICS):
-        df = pd.read_sql(tableName, self.engine_sql)
+        df = pd.read_sql(tableName, self.engine_sql,index_col='code')
         return df
 
     def setReportData(self,year=None,quarter=None, number = 1, isSave = False,tableName = BASE_REPORT_DATA):
@@ -152,7 +152,7 @@ class BaseInfo:
 
 if __name__ == '__main__':
     baseeng = BaseInfo()
-    df = baseeng.setStockBasics(isSave = True)
+    df = baseeng.setReportData(year= 2017,quarter = 4,number=20,isSave = True)
 
 
 

@@ -39,7 +39,6 @@ class StockBasics():
             'npr': dbtype.FLOAT(),
             'holders': dbtype.FLOAT(),
         },
-
 #     code = models.CharField(u'代码', max_length=50)
 #     name = models.CharField(u'名称', max_length=50)
 #     industry = models.CharField(u'所属行业', max_length=50)
@@ -66,7 +65,20 @@ class StockBasics():
 #
 #     def __unicode__(self):
 #         return '%s %s' % (self.code, self.name)
-#
+        BASE_REPORT_DATA:{
+            'code': dbtype.CHAR(10),
+            'name': dbtype.CHAR(50),
+            'esp': dbtype.FLOAT(12),
+            'eps_yoy': dbtype.FLOAT(12),
+            'bvps': dbtype.FLOAT(12),
+            'roe': dbtype.FLOAT(12),
+            'epcf': dbtype.FLOAT(12),
+            'net_profits': dbtype.FLOAT(12),
+            'profits_yoy': dbtype.FLOAT(12),
+            'distrib': dbtype.CHAR(20),
+            'report_date': dbtype.CHAR(10),
+            'date': dbtype.CHAR(10),
+        }
 # # 业绩报告
 # class ReportData(models.Model):
 #     code = models.CharField(u'代码', max_length=50)
