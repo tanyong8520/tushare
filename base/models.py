@@ -2,12 +2,44 @@
 from __future__ import unicode_literals
 
 from django.db import models
+import sqlalchemy.types as dbtype
 #
 #
 # # 基本面
 #
 # 股票列表
-# class StockBasics(models.Model):
+from utilAll.Constants import *
+
+
+class StockBasics():
+    baseType = {
+        BASE_STOCK_BASICS:{
+            'code':dbtype.CHAR(10),
+            'name': dbtype.CHAR(50),
+            'industry': dbtype.CHAR(50),
+            'area': dbtype.CHAR(20),
+            'pe': dbtype.FLOAT(12),
+            'outstanding': dbtype.FLOAT(),
+            'totals': dbtype.FLOAT(),
+            'totalAssets': dbtype.FLOAT(),
+            'liquidAssets': dbtype.FLOAT(),
+            'fixedAssets': dbtype.FLOAT(),
+            'reserved': dbtype.FLOAT(),
+            'reservedPerShare': dbtype.FLOAT(),
+            'esp': dbtype.FLOAT(),
+            'bvps': dbtype.FLOAT(),
+            'pb': dbtype.FLOAT(),
+            'timeToMarket': dbtype.TIMESTAMP('yyyyMMdd'),
+            'undp': dbtype.FLOAT(),
+            'perundp': dbtype.FLOAT(),
+            'perundp': dbtype.FLOAT(),
+            'rev': dbtype.FLOAT(),
+            'profit': dbtype.FLOAT(),
+            'gpr': dbtype.FLOAT(),
+            'npr': dbtype.FLOAT(),
+            'holders': dbtype.FLOAT(),
+        },
+
 #     code = models.CharField(u'代码', max_length=50)
 #     name = models.CharField(u'名称', max_length=50)
 #     industry = models.CharField(u'所属行业', max_length=50)
@@ -119,6 +151,12 @@ from django.db import models
 #     cf_nm = models.FloatField(u'经营现金净流量与净利润的比率' )
 #     cf_liabilities = models.FloatField(u'经营现金净流量对负债比率' )
 #     cashflowratio = models.FloatField(u'现金流量比率' )
-#
-#     def __unicode__(self):
-#         return '%s %s' % (self.code, self.name)
+    }
+    # def __unicode__(self):
+    #     return '%s %s' % (self.code, self.name)
+
+if __name__ == '__main__':
+    baestype = StockBasics().baseType
+    print baestype
+    a = baestype.get(BASE_STOCK_BASICS)
+    print a

@@ -2,9 +2,18 @@
 
 SQL_ENG_NAME = 'mysql://root:root@127.0.0.1/live?charset=utf8'
 
+# 交易数据
+# 所有的数据
+TRANSACTION_ALL_DATA = 'transaction_all_data'
+#历史数据
+TRANSACTION_HIST_DATA = 'transaction_hist_data'
+# 历史详情数据。5分钟间隔
+TRANSACTION_HIST_DETAILS_DATA = 'transaction_hist_details_data'
+
+
 # base table
 # 基础信息
-BASE_STOCK_BASICS = 'base_stockbasics'
+BASE_STOCK_BASICS = 'base_stockbasics1'
 # 业绩报告
 BASE_REPORT_DATA = 'base_reportdata'
 # 盈利能力
@@ -95,4 +104,3 @@ CALLLOANS_MA_DATA = 'callloansInfo_shibor_ma_data'
 CALLLOANS_LPR_DATA = 'callloansInfo_lpr_data'
 # 贷款基础利率均值
 CALLLOANS_LPR_MA_DATA = 'callloansInfo_lpr_ma_data'
-

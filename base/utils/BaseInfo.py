@@ -1,19 +1,24 @@
 # -*- coding: utf-8 -*-
 import tushare as ts
 from sqlalchemy import create_engine
+import sqlalchemy.types as dbtype
 from utilAll.Constants import *
 from utilAll.FormatDate import *
+from base.models import *
 import pandas as pd
 
 
 class BaseInfo:
     engine_sql = create_engine(SQL_ENG_NAME)
-
+    baseType =StockBasics().baseType
 
     def setStockBasics(self,isSave = False,tableName = BASE_STOCK_BASICS):
         df = ts.get_stock_basics()
+        if df is None:
+            print 'get stock basice info error'
+            return
         if isSave is True:
-            df.to_sql(tableName,self.engine_sql, if_exists='append')
+            df.to_sql(tableName,self.engine_sql, if_exists='append',dtype=self.baseType[tableName])
         return df
 
     def getStockBasics(self,tableName = BASE_STOCK_BASICS):
@@ -147,7 +152,7 @@ class BaseInfo:
 
 if __name__ == '__main__':
     baseeng = BaseInfo()
-    df = baseeng.setCashflowData(year= 2016,quarter = 4,number=12,isSave = True)
+    df = baseeng.setStockBasics(isSave = True)
 
 
 
