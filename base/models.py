@@ -172,12 +172,12 @@ class StockBasics():
         BASE_DEBTPAYINT_DATA: {
             'code': dbtype.CHAR(10),
             'name': dbtype.CHAR(50),
-            'currentratio': dbtype.FLOAT(12),
-            'quickratio': dbtype.FLOAT(12),
-            'cashratio': dbtype.FLOAT(12),
-            'icratio': dbtype.FLOAT(12),
-            'sheqratio': dbtype.FLOAT(12),
-            'adratio': dbtype.FLOAT(12),
+            'currentratio': dbtype.CHAR(50),
+            'quickratio': dbtype.CHAR(50),
+            'cashratio': dbtype.CHAR(50),
+            'icratio': dbtype.CHAR(50),
+            'sheqratio': dbtype.CHAR(50),
+            'adratio': dbtype.CHAR(50),
             'date': dbtype.CHAR(10),
         },
 # # 偿债能力
@@ -216,7 +216,6 @@ class StockBasics():
     # def __unicode__(self):
     #     return '%s %s' % (self.code, self.name)
     }
-
 
 if __name__ == '__main__':
     baestype = StockBasics().baseType

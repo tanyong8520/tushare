@@ -28,9 +28,12 @@ class BaseInfo:
         for i in range(0,number):
             try:
                 df = ts.get_report_data(year, quarter)
+                if df is None:
+                    print 'get base report data error'
+                    return
                 df['date'] =str(year) + str(quarter)
                 if isSave is True:
-                    df.to_sql(tableName,self.engine_sql, if_exists='append')
+                    df.to_sql(tableName,self.engine_sql, if_exists='append',dtype=self.baseType[tableName])
                 quarter = quarter - 1
                 if quarter < 1:
                     quarter = 4
@@ -47,9 +50,12 @@ class BaseInfo:
         for i in range(0, number):
             try:
                 df = ts.get_profit_data(year, quarter)
+                if df is None:
+                    print 'get base profit info error'
+                    return
                 df['date'] = str(year) + str(quarter)
                 if isSave is True:
-                    df.to_sql(tableName, self.engine_sql, if_exists='append')
+                    df.to_sql(tableName, self.engine_sql, if_exists='append',dtype=self.baseType[tableName])
                 quarter = quarter - 1
                 if quarter < 1:
                     quarter = 4
@@ -66,9 +72,12 @@ class BaseInfo:
         for i in range(0, number):
             try:
                 df = ts.get_operation_data(year,quarter)
+                if df is None:
+                    print 'get base operation info error'
+                    return
                 df['date'] = str(year) + str(quarter)
                 if isSave is True:
-                    df.to_sql(tableName, self.engine_sql, if_exists='append')
+                    df.to_sql(tableName, self.engine_sql, if_exists='append',dtype=self.baseType[tableName])
                 quarter = quarter - 1
                 if quarter < 1:
                     quarter = 4
@@ -85,9 +94,12 @@ class BaseInfo:
         for i in range(0, number):
             try:
                 df = ts.get_growth_data(year,quarter)
+                if df is None:
+                    print 'get base growth info error'
+                    return
                 df['date'] = str(year) + str(quarter)
                 if isSave is True:
-                    df.to_sql(tableName, self.engine_sql, if_exists='append')
+                    df.to_sql(tableName, self.engine_sql, if_exists='append',dtype=self.baseType[tableName])
                 quarter = quarter - 1
                 if quarter < 1:
                     quarter = 4
@@ -104,9 +116,12 @@ class BaseInfo:
         for i in range(0, number):
             try:
                 df = ts.get_debtpaying_data(year,quarter)
+                if df is None:
+                    print 'get base debtpaying info error'
+                    return
                 df['date'] = str(year) + str(quarter)
                 if isSave is True:
-                    df.to_sql(tableName, self.engine_sql, if_exists='append')
+                    df.to_sql(tableName, self.engine_sql, if_exists='append',dtype=self.baseType[tableName])
                 quarter = quarter - 1
                 if quarter < 1:
                     quarter = 4
@@ -123,9 +138,12 @@ class BaseInfo:
         for i in range(0, number):
             try:
                 df = ts.get_cashflow_data(year,quarter)
+                if df is None:
+                    print 'get base cashflow info error'
+                    return
                 df['date'] = str(year) + str(quarter)
                 if isSave is True:
-                    df.to_sql(tableName, self.engine_sql, if_exists='append')
+                    df.to_sql(tableName, self.engine_sql, if_exists='append',dtype=self.baseType[tableName])
                 quarter = quarter - 1
                 if quarter < 1:
                     quarter = 4
@@ -150,7 +168,8 @@ class BaseInfo:
 
 if __name__ == '__main__':
     baseeng = BaseInfo()
-    df = baseeng.setReportData(year= 2017,quarter = 4,number=20,isSave = True)
+    # baseeng.setStockBasics(isSave = True)
+    df = baseeng.setDebtpayingData(year= 2016,quarter = 4,number=16,isSave = True)
 
 
 

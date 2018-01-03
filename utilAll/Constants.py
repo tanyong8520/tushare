@@ -15,7 +15,7 @@ TRANSACTION_HIST_DETAILS_DATA = 'transaction_hist_details_data'
 # 基础信息
 BASE_STOCK_BASICS = 'base_stockbasics'
 # 业绩报告
-BASE_REPORT_DATA = 'base_reportdata1'
+BASE_REPORT_DATA = 'base_reportdata'
 # 盈利能力
 BASE_PROFIT_DATA = 'base_profitdata'
 # 营运能力
