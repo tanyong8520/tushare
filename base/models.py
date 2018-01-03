@@ -78,7 +78,7 @@ class StockBasics():
             'distrib': dbtype.CHAR(20),
             'report_date': dbtype.CHAR(10),
             'date': dbtype.CHAR(10),
-        }
+        },
 # # 业绩报告
 # class ReportData(models.Model):
 #     code = models.CharField(u'代码', max_length=50)
@@ -95,7 +95,18 @@ class StockBasics():
 #
 #     def __unicode__(self):
 #         return '%s %s' % (self.code, self.name)
-#
+        BASE_PROFIT_DATA: {
+            'code': dbtype.CHAR(10),
+            'name': dbtype.CHAR(50),
+            'roe': dbtype.FLOAT(12),
+            'net_profit_ratio': dbtype.FLOAT(12),
+            'gross_profit_rate': dbtype.FLOAT(12),
+            'net_profits': dbtype.FLOAT(12),
+            'esp': dbtype.FLOAT(12),
+            'business_income': dbtype.FLOAT(12),
+            'bips': dbtype.FLOAT(12),
+            'date': dbtype.CHAR(10),
+        },
 # # 盈利能力
 # class ProfitData(models.Model):
 #     code = models.CharField(u'代码', max_length=50)
@@ -110,7 +121,17 @@ class StockBasics():
 #
 #     def __unicode__(self):
 #         return '%s %s' % (self.code, self.name)
-#
+        BASE_OPERATION_DATA: {
+            'code': dbtype.CHAR(10),
+            'name': dbtype.CHAR(50),
+            'arturnover': dbtype.FLOAT(12),
+            'arturndays': dbtype.FLOAT(12),
+            'inventory_turnover': dbtype.FLOAT(12,4),
+            'inventory_days': dbtype.FLOAT(12,4),
+            'currentasset_turnover': dbtype.FLOAT(12,4),
+            'currentasset_days': dbtype.FLOAT(12),
+            'date': dbtype.CHAR(10),
+        },
 # # 营运能力
 # class OperationData(models.Model):
 #     code = models.CharField(u'代码', max_length=50)
@@ -124,7 +145,17 @@ class StockBasics():
 #
 #     def __unicode__(self):
 #         return '%s %s' % (self.code, self.name)
-#
+        BASE_GROWTH_DATA: {
+            'code': dbtype.CHAR(10),
+            'name': dbtype.CHAR(50),
+            'mbrg': dbtype.FLOAT(12),
+            'nprg': dbtype.FLOAT(12),
+            'nav': dbtype.FLOAT(12),
+            'targ': dbtype.FLOAT(12),
+            'epsg': dbtype.FLOAT(12),
+            'seg': dbtype.FLOAT(12),
+            'date': dbtype.CHAR(10),
+        },
 # # 成长能力
 # class GrowthData(models.Model):
 #     code = models.CharField(u'代码', max_length=50)
@@ -138,7 +169,17 @@ class StockBasics():
 #
 #     def __unicode__(self):
 #         return '%s %s' % (self.code, self.name)
-#
+        BASE_DEBTPAYINT_DATA: {
+            'code': dbtype.CHAR(10),
+            'name': dbtype.CHAR(50),
+            'currentratio': dbtype.FLOAT(12),
+            'quickratio': dbtype.FLOAT(12),
+            'cashratio': dbtype.FLOAT(12),
+            'icratio': dbtype.FLOAT(12),
+            'sheqratio': dbtype.FLOAT(12),
+            'adratio': dbtype.FLOAT(12),
+            'date': dbtype.CHAR(10),
+        },
 # # 偿债能力
 # class DebtpayingData(models.Model):
 #     code = models.CharField(u'代码', max_length=50)
@@ -153,9 +194,18 @@ class StockBasics():
 #     def __unicode__(self):
 #         return '%s %s' % (self.code, self.name)
 #
-#
+        BASE_CASHFLOW_DATA: {
+            'code': dbtype.CHAR(10),
+            'name': dbtype.CHAR(50),
+            'cf_sales': dbtype.FLOAT(12),
+            'rateofreturn': dbtype.FLOAT(12),
+            'cf_nm': dbtype.FLOAT(12),
+            'cf_liabilities': dbtype.FLOAT(12),
+            'cashflowratio': dbtype.FLOAT(12),
+            'date': dbtype.CHAR(10),
+        },
 # # 现金流量
-# class DebtpayingData(models.Model):
+# class CashFlowData(models.Model):
 #     code = models.CharField(u'代码', max_length=50)
 #     name = models.CharField(u'名称', max_length=50)
 #     cf_sales = models.FloatField(u'经营现金净流量对销售收入比率' )
@@ -163,9 +213,10 @@ class StockBasics():
 #     cf_nm = models.FloatField(u'经营现金净流量与净利润的比率' )
 #     cf_liabilities = models.FloatField(u'经营现金净流量对负债比率' )
 #     cashflowratio = models.FloatField(u'现金流量比率' )
-    }
     # def __unicode__(self):
     #     return '%s %s' % (self.code, self.name)
+    }
+
 
 if __name__ == '__main__':
     baestype = StockBasics().baseType

@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 import tushare as ts
 from sqlalchemy import create_engine
-import sqlalchemy.types as dbtype
-from utilAll.Constants import *
 from utilAll.FormatDate import *
 from base.models import *
 import pandas as pd
@@ -67,7 +65,7 @@ class BaseInfo:
         [year, quarter] = getYearQuarter(year, quarter)
         for i in range(0, number):
             try:
-                df = ts.get_profit_data(year,quarter)
+                df = ts.get_operation_data(year,quarter)
                 df['date'] = str(year) + str(quarter)
                 if isSave is True:
                     df.to_sql(tableName, self.engine_sql, if_exists='append')
@@ -86,7 +84,7 @@ class BaseInfo:
         [year,quarter] = getYearQuarter(year,quarter)
         for i in range(0, number):
             try:
-                df = ts.get_profit_data(year,quarter)
+                df = ts.get_growth_data(year,quarter)
                 df['date'] = str(year) + str(quarter)
                 if isSave is True:
                     df.to_sql(tableName, self.engine_sql, if_exists='append')
@@ -105,7 +103,7 @@ class BaseInfo:
         [year,quarter] = getYearQuarter(year,quarter)
         for i in range(0, number):
             try:
-                df = ts.get_profit_data(year,quarter)
+                df = ts.get_debtpaying_data(year,quarter)
                 df['date'] = str(year) + str(quarter)
                 if isSave is True:
                     df.to_sql(tableName, self.engine_sql, if_exists='append')
@@ -124,7 +122,7 @@ class BaseInfo:
         [year,quarter] = getYearQuarter(year,quarter)
         for i in range(0, number):
             try:
-                df = ts.get_profit_data(year,quarter)
+                df = ts.get_cashflow_data(year,quarter)
                 df['date'] = str(year) + str(quarter)
                 if isSave is True:
                     df.to_sql(tableName, self.engine_sql, if_exists='append')
