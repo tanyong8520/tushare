@@ -5,7 +5,10 @@
 #
 # # Create your models here.
 # # 参考数据
-#
+class Classified():
+    baseType = {
+
+
 # # 行业分类
 # class Industry(models.Model):
 #     code = models.CharField(u'代码', max_length=50)
@@ -101,3 +104,5 @@
 #
 #     def __unicode__(self):
 #         return '%s %s %s' % (self.name, self.code)
+
+    }
