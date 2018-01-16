@@ -99,9 +99,24 @@ if __name__ == '__main__':
     transactionInfo = TransactionInfo()
     trans_info =  pd.read_sql_query('select count(*) ,code from `transaction_all_data` group by code',transactionInfo.engine_sql)
     baseInfo = BaseInfo()
-    stockBasicsInfo = baseInfo.getStockBasics().loc[:,['timeToMarket','code']]
-    df.stockBasicsInfo['code'].isin()
-    testinfo = ['000517','000631']
-    if testinfo in trans_info['code'].iteritems():
-        print testinfo
+    print trans_info
+    # stockBasicsInfo = baseInfo.getStockBasics().loc[:,['timeToMarket','code']]
+    stockBasicsInfo = pd.DataFrame(columns=('time', 'code'))
+    stockBasicsInfo.loc[0] = ['1', '10']
+    stockBasicsInfo.loc[1] = ['1', '000517']
+    stockBasicsInfo.loc[2] = ['1', '12']
+    stockBasicsInfo.loc[3] = ['1', '000631']
+    stockBasicsInfo.loc[4] = ['1', '14']
+    stockBasicsInfo.drop()
+    print stockBasicsInfo
+    isDowned = stockBasicsInfo.loc[:,'code'].isin(trans_info.loc[:,'code'])
+
+    df[(True - df['appID'].isin([278, 382]))]
+    print 'isDowned'
+    print isDowned
+    # for index, row in isDowned.iterrows():
+    #     if row['code'] is True:
+    #         stockBasicsInfo.drop(index)
+
+    print stockBasicsInfo
     # print TransactionInfo().getAllDate(isSave=True);
