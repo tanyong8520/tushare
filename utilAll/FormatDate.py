@@ -7,6 +7,12 @@ def getNowdate():
     dt = myday.strftime('%Y-%m-%d')
     return dt
 
+def getYseterDay():
+    today = datetime.date.today()
+    yesterday = today - datetime.timedelta(days=1)
+    return yesterday.strftime('%Y-%m-%d')
+
+
 def getYearQuarter(year,quarter):
     if year is None:
         year = datetime.datetime.now().year
@@ -60,4 +66,4 @@ def getYearList(endYear = None,number = 1):
     return dete_l
 
 if __name__ == '__main__':
-    print getYearList(number = 10)
+    print getYseterDay()

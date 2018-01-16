@@ -168,8 +168,8 @@ class BaseInfo:
 
 if __name__ == '__main__':
     baseeng = BaseInfo()
-    # baseeng.setStockBasics(isSave = True)
-    df = baseeng.setDebtpayingData(year= 2016,quarter = 4,number=16,isSave = True)
+    baseeng.setStockBasics(isSave = True)
+    # df = baseeng.setDebtpayingData(year= 2016,quarter = 4,number=16,isSave = True)
 
 
 

@@ -4,7 +4,13 @@
 # from django.db import models
 #
 # # 交易数据
-#
+import sqlalchemy.types as dbtype
+
+from utilAll.Constants import *
+
+
+class Transaction():
+    baseType = {
 # # 现金流量
 # class HistData(models.Model):
 #     date = models.DateField(u'日期')
@@ -26,7 +32,16 @@
 #
 #     def __unicode__(self):
 #         return '%s %s' % (self.date, self.code)
-#
+        TRANSACTION_ALL_DATA: {
+            'date': dbtype.TIMESTAMP(),
+            'code': dbtype.CHAR(10),
+            'open': dbtype.FLOAT(),
+            'high': dbtype.FLOAT(),
+            'close': dbtype.FLOAT(),
+            'low': dbtype.FLOAT(),
+            'volume': dbtype.FLOAT(),
+            'amount': dbtype.FLOAT(),
+        }
 # # 复权历史数据
 # class StockData(models.Model):
 #     date = models.DateField(u'日期')
@@ -105,3 +120,4 @@
 #
 #     def __unicode__(self):
 #         return '%s %s' % (self.date, self.code)
+    }
