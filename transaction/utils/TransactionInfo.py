@@ -96,10 +96,10 @@ class TransactionInfo:
 
 
 if __name__ == '__main__':
-    transactionInfo = TransactionInfo()
-    trans_info =  pd.read_sql_query('select count(*) ,code from `transaction_all_data` group by code',transactionInfo.engine_sql)
-    baseInfo = BaseInfo()
-    print trans_info
+    # transactionInfo = TransactionInfo()
+    # trans_info =  pd.read_sql_query('select count(*) ,code from `transaction_all_data` group by code',transactionInfo.engine_sql)
+    # baseInfo = BaseInfo()
+    # print trans_info
     # stockBasicsInfo = baseInfo.getStockBasics().loc[:,['timeToMarket','code']]
     stockBasicsInfo = pd.DataFrame(columns=('time', 'code'))
     stockBasicsInfo.loc[0] = ['1', '10']
@@ -107,16 +107,22 @@ if __name__ == '__main__':
     stockBasicsInfo.loc[2] = ['1', '12']
     stockBasicsInfo.loc[3] = ['1', '000631']
     stockBasicsInfo.loc[4] = ['1', '14']
-    stockBasicsInfo.drop()
+    print stockBasicsInfo.count()
     print stockBasicsInfo
-    isDowned = stockBasicsInfo.loc[:,'code'].isin(trans_info.loc[:,'code'])
+    print 'drop'
+    df =  stockBasicsInfo.where(-stockBasicsInfo.isin(['10','14']))
+    print df
 
-    df[(True - df['appID'].isin([278, 382]))]
-    print 'isDowned'
-    print isDowned
+    print 'drop2'
+    print stockBasicsInfo
+    df2 = stockBasicsInfo[(-stockBasicsInfo['code'].isin(['000517','10']))]
+    print df2.count()['code']
+    print df2
+
+    print 'drop3'
+
     # for index, row in isDowned.iterrows():
     #     if row['code'] is True:
     #         stockBasicsInfo.drop(index)
 
-    print stockBasicsInfo
     # print TransactionInfo().getAllDate(isSave=True);
