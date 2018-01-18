@@ -152,10 +152,16 @@ class ReferenceInfo:
         return df
 
     def getAllReferenceInfo(self,year = None, isSave = False):
-        reference.setProfitData(year=2015, topNo=5000, isSave=True)
+        self.setProfitData(year=2016, topNo=5000, isSave=True)
+        self.setForecastData(year=2016, quarter=4, number=1, isSave=True)
+        self.setXsgData(year = 2017, month=12, number = 12, isSave = True)
+        self.setFundHoldings(year=2017, quarter=4, number=4, isSave=True)
+        self.setNewStocks(isSave = True)
+        self.setShMargins(endTime = '2017-12-25',number = 365, isSave = True)
+        self.setShMarginDetails(endTime = '2015-12-25',number = 365, isSave = True)
 
 
 
 if __name__ == '__main__':
     reference =  ReferenceInfo()
-    print reference.setForecastData(year = 2016, quarter=4, number = 4, isSave = True)
+    print reference.setShMarginDetails(endTime = '2015-12-25',number = 365, isSave = True)
