@@ -94,12 +94,12 @@ class TransactionInfo:
                         df['code'] = codeString
                         df.to_sql(tableName, self.engine_sql, if_exists='append',dtype = self.baseType[tableName])
                         print 'get code:%s'%(codeString)
-                    time.sleep(180)
+                    time.sleep(120)
                     break
                 except Exception,e:
                     print "get %s details info error"%(row['code'])
                     print e
-                    time.sleep(300)
+                    time.sleep(180)
 
     def test(self):
         stockBasicsInfo = pd.DataFrame(columns=('time', 'code'))
