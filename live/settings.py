@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'newsinfo.apps.NewsinfoConfig',
     'reference.apps.ReferenceConfig',
     'transaction.apps.TransactionConfig',
+    'django_apscheduler',
 ]
 
 MIDDLEWARE = [
@@ -84,7 +85,7 @@ WSGI_APPLICATION = 'live.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'live',
+        'NAME': 'tushare',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': '127.0.0.1',

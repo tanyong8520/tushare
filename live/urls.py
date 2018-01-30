@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+
 from base import urls as base_urls
 from callloans import urls as callloans_urls
 from classified import urls as classified_urls
@@ -33,3 +34,5 @@ urlpatterns = [
     url(r'^transaction/',include(transaction_urls)),
     url(r'^admin/', admin.site.urls),
 ]
+
+import quartz.jobs
