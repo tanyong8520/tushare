@@ -23,6 +23,7 @@ from macroeconomic import urls as macroeconomic_urls
 from newsinfo import urls as newsinfo_urls
 from reference import urls as reference_urls
 from transaction import urls as transaction_urls
+from quartz import urls as quartz_urls
 
 urlpatterns = [
     url(r'^base/', include(base_urls)),
@@ -33,6 +34,7 @@ urlpatterns = [
     url(r'^reference/',include(reference_urls)),
     url(r'^transaction/',include(transaction_urls)),
     url(r'^admin/', admin.site.urls),
+    url(r'^quartz/', include(quartz_urls)),
 ]
 
 import quartz.jobs
