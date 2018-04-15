@@ -11,3 +11,15 @@ class JobInfoModel(models.Model):
     describe = models.CharField(u'描述', max_length=200)
     delete = models.IntegerField(u'是否删除：1未删除，2已删除')
     date = models.DateField(u'创建日期')
+
+    def __unicode__(self):
+        return self.id
+        # 将属性和属性值转换成dict 列表生成式
+
+    def toDict(self):
+        return dict([(attr, getattr(self, attr)) for attr in
+                     [f.name for f in self._meta.fields]])  # type(self._meta.fields).__name__
+
+    # class Meta:
+    #     managed = False
+    #     db_table = 'quartz_jobinfomodel'

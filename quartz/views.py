@@ -9,6 +9,8 @@ from quartz.jobs import SchedulerService,computingWork
 from quartz.models import JobInfoModel
 from utilAll.FileUtils import *
 from utilAll.DateUtils import *
+from utilAll.ResponseUtils import MakeResponse
+
 
 def index(request):
     if request.method == 'POST':
@@ -24,7 +26,7 @@ def index(request):
 
 def list(request):
     jobInfoList = JobInfoModel.objects.all();
-    return HttpResponse(jobInfoList)
+    return MakeResponse(jobInfoList)
 
 def add(request):
     if request.method == 'POST':
@@ -33,23 +35,16 @@ def add(request):
         # handle_upload_file(request.FILES['file'], fileName)
         fileName = 'test'
         type=2
-
         if(req.has_key("runDate") is False):
             return HttpResponse(status=400)
         else:
             runDate = req.get('runDate')
-
         if (req.has_key("describe")):
             describe = req.get('describe')
-
         delete = 1
-
         date = getNowDate()
-
         JobInfoModel(fileName=fileName,runDate=runDate,type=type,describe=describe,delete=delete,date=date).save()
-
         return HttpResponse('success')
-
     else:
         return HttpResponse(status=403,reason=u'info error')
 
