@@ -1,9 +1,10 @@
+# # -*- coding: utf-8 -*-
 from django.db import models
 
 
 
-class JobInfo(models.Model):
-    id = models.AutoField(u'编号')
+class JobInfoModel(models.Model):
+    id = models.AutoField(u'编号',primary_key=True)
     fileName = models.CharField(u'文件名', max_length=100)
     type = models.IntegerField(u'类型：1系统，2自定义')
     runDate = models.CharField(u'执行周期', max_length=100)

@@ -6,5 +6,5 @@ import time
 
 
 def test():
-    time.sleep(3)
+    time.sleep(50)
     print "this is test"

@@ -45,13 +45,14 @@ INSTALLED_APPS = [
     'reference.apps.ReferenceConfig',
     'transaction.apps.TransactionConfig',
     'django_apscheduler',
+    'quartz.apps.QuartzConfig',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -127,6 +128,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_L10N = True
+
+APPEND_SLASH=False
 
 USE_TZ = True
 
