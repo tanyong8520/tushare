@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from datetime import datetime
+
 # date 转 cron 表达式
 def date2cron(year=None, month=None, day=None, hour=None, minute=None, week=None):
     date_arr = [minute, hour, day, month, week, year]
@@ -26,7 +28,9 @@ def cron2date(exp):
             map[d] = expList[i]
     return map
 
-
+# 获取当前时间
+def getNowDate():
+    return datetime.now()
 
 if __name__ == '__main__':
     a = '2 0,24 0,5 * * ? '
