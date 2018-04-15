@@ -25,7 +25,7 @@ class SchedulerService:
 
     def addJob(self,func,dateExp,funcId):
         dateMap = cron2date(dateExp)
-        self.scheduler.add_job(computingWork, 'cron', hour=dateMap.get("hour"), minute=dateMap.get("minute"),
+        self.scheduler.add_job(func, 'cron', hour=dateMap.get("hour"), minute=dateMap.get("minute"),
                                second=dateMap.get("second"),day=dateMap.get("day"), month=dateMap.get("month"),
                                week=dateMap.get("week"),id=funcId, replace_existing=True)
 
@@ -46,9 +46,7 @@ def computingWork():
 
 
 if __name__ == '__main__':
-    schedulerService = SchedulerService()
-    schedulerService.computingWork()
-    # schedulerService.addJob()
+    pass
 
 # @register_job(scheduler, 'cron', hour='0-23', minute="*", second="*/4",id='testjob2',replace_existing=True)
 # def test_job():
