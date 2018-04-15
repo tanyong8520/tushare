@@ -41,6 +41,16 @@ class Transaction():
             'low': dbtype.FLOAT(),
             'volume': dbtype.FLOAT(),
             'amount': dbtype.FLOAT(),
+        },
+        TRANSACTION_ALL_DATA1: {
+            'date': dbtype.TIMESTAMP(),
+            'code': dbtype.CHAR(10),
+            'open': dbtype.FLOAT(),
+            'high': dbtype.FLOAT(),
+            'close': dbtype.FLOAT(),
+            'low': dbtype.FLOAT(),
+            'volume': dbtype.FLOAT(),
+            'amount': dbtype.FLOAT(),
         }
 # # 复权历史数据
 # class StockData(models.Model):

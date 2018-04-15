@@ -60,6 +60,22 @@ class TransactionInfo:
     def getTodayAll(self):
         return ts.get_today_all()
 
+    def getTodayAll(self,isSave=False,tableName=TRANSACTION_ALL_DATA1):
+        while True:
+            try:
+                df = ts.get_today_all()
+                date = getNowdate()
+                df2 = df.loc[:,['code','open','high','close','low','volume','amount']]
+                df2['date']=date
+                print df2
+                if isSave is True:
+                    df2.to_sql(tableName, self.engine_sql, if_exists='append', dtype=self.baseType[tableName])
+                return df2
+            except Exception, e:
+                print "get all details info error,%s"%e.message
+                print e
+                time.sleep(180)
+
     def getAllDate(self,start=None,end=None,isSave=False,tableName=TRANSACTION_ALL_DATA):
         if end is None:
             end = '2018-01-09'#getYseterDay()
@@ -79,7 +95,11 @@ class TransactionInfo:
                     codeString = stocklist.loc[index]['code']
                     print "code:%s,startTime:%s"%(codeString,row['timeToMarket'])
                     if start is None:
+                        if row['timeToMarket'] is pd.NaT :
+                            print "code:%s,startTime is None" % (codeString)
+                            break
                         startdate = row['timeToMarket'].to_pydatetime().strftime('%Y-%m-%d')
+
                         if startdate < '2005-01-01':
                             startdate = '2005-01-01'
                         print "code:%s,startTime:%s" % (codeString, startdate)
@@ -135,4 +155,4 @@ class TransactionInfo:
 
 if __name__ == '__main__':
 
-    TransactionInfo().getAllDate(isSave=True);
+    TransactionInfo().getTodayAll(isSave=True);
