@@ -60,7 +60,7 @@ class TransactionInfo:
     def getTodayAll(self):
         return ts.get_today_all()
 
-    def getTodayAll(self,isSave=False,tableName=TRANSACTION_ALL_DATA1):
+    def getTodayAll(self,isSave=False,tableName=TRANSACTION_ALL_DATA_TEST):
         while True:
             try:
                 df = ts.get_today_all()

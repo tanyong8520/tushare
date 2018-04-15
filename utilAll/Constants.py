@@ -5,6 +5,7 @@ SQL_ENG_NAME = 'mysql://root:root@127.0.0.1/live?charset=utf8'
 # 交易数据
 # 所有的数据复权数据
 TRANSACTION_ALL_DATA = 'transaction_all_data'
+TRANSACTION_ALL_DATA_TEST = 'transaction_all_data_TEST'
 #历史数据
 TRANSACTION_HIST_DATA = 'transaction_hist_data'
 # 历史详情数据。5分钟间隔

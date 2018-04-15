@@ -42,7 +42,7 @@ class Transaction():
             'volume': dbtype.FLOAT(),
             'amount': dbtype.FLOAT(),
         },
-        TRANSACTION_ALL_DATA1: {
+        TRANSACTION_ALL_DATA_TEST: {
             'date': dbtype.TIMESTAMP(),
             'code': dbtype.CHAR(10),
             'open': dbtype.FLOAT(),
