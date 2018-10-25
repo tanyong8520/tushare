@@ -12,6 +12,8 @@ from sklearn.model_selection import train_test_split
 #轮廓系数
 from sklearn.metrics import silhouette_score
 
+#聚类测试
+
 def kmeansTest():
     from sklearn.cluster import KMeans
     kmeans = KMeans(n_clusters=10)
@@ -146,4 +148,4 @@ def wireframe():
     surf = ax.plot_surface(X, Y, Z)
 
 
-kmeanstest2()
+pltTest()

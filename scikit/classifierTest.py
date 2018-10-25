@@ -14,6 +14,7 @@ from sklearn.datasets import fetch_20newsgroups
 
 from sklearn.datasets import load_boston
 
+#分类测试
 
 # 随机梯度下降分类器
 def SGDClassifierTest():
