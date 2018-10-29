@@ -95,7 +95,7 @@ def titanicTest():
     y = titanic['survived']
     X = titanic.drop(['row.names','name','survived'], axis=1)
 
-    X['age'].fillna(X['ange'].mean(), inplace = True)
+    X['age'].fillna(X['age'].mean(), inplace = True)
     X.fillna('UNKNOWN', inplace = True)
 
     X_train, X_test, Y_train, Y_test = train_test_split(X, y, test_size=0.25, random_state=33)
@@ -118,7 +118,7 @@ def titanicTest():
     fs = feature_selection.SelectPercentile(feature_selection.chi2, percentile=20)
     X_train_fs = fs.fit_transform(X_train, Y_train)
     dt.fit(X_train_fs, Y_train)
-    X_test_fs = dt.transform(X_test)
+    X_test_fs = fs.transform(X_test)
     dt.score(X_test_fs, Y_test)
 
     #使用交叉验证
@@ -134,13 +134,15 @@ def titanicTest():
 
     print results
 
-    opt = np.where(results == results.max())[0]
-    print 'Optimal number of features %d'%percentiles[opt]
+    opt = np.where(results == results.max())[0][0]
+    print opt
+    print 'Optimal number of features %d'% percentiles[opt]
 
     #使用最佳筛选后，利用相同的配置对模型在测试集上进行评估
-    fs = feature_selection.SelectPercentile(feature_selection.chi2, percentile=opt)
+    fs = feature_selection.SelectPercentile(feature_selection.chi2, percentile=percentiles[opt])
     X_train_fs = fs.fit_transform(X_train, Y_train)
     dt.fit(X_train_fs, Y_train)
-    X_test_fs = dt.transform(X_test)
+    X_test_fs = fs.transform(X_test)
     dt.score(X_test_fs, Y_test)
 
+titanicTest()
