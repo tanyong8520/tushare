@@ -2,6 +2,20 @@
 
 from datetime import datetime
 
+def getDateStr(date):
+    return date.strftime("%Y-%m-%d")
+
+def getDDayStr(d):
+    return getDateStr(getDDate(datetime.date.today(),d))
+
+def getDDate(date,d):
+    dt=getDateTimeFromDate(date)
+    dt=date+datetime.timedelta(days=1)*d
+    return dt
+
+def getDateTimeFromDate(date):
+    return datetime.datetime(date.year,date.month,date.day)
+
 # date 转 cron 表达式
 def date2cron(year=None, month=None, day=None, hour=None, minute=None, week=None):
     date_arr = [minute, hour, day, month, week, year]
@@ -31,6 +45,11 @@ def cron2date(exp):
 # 获取当前时间
 def getNowDate():
     return datetime.now()
+
+def getToday():
+    now=datetime.now()
+    nowstr=now.strftime("%Y-%m-%d")
+    return nowstr
 
 if __name__ == '__main__':
     a = '2 0,24 0,5 * * ? '

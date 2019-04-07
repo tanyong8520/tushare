@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-SQL_ENG_NAME = 'mysql://root:root@127.0.0.1/live?charset=utf8'
+SQL_ENG_NAME = 'postgresql://root:root@127.0.0.1/live?charset=utf8'
 
 # 交易数据
 # 所有的数据复权数据
